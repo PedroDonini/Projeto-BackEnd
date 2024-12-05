@@ -10,5 +10,24 @@
   "schemes": [
     "http"
   ],
-  "paths": {}
+  "paths": {
+    "/veiculos/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
 }
