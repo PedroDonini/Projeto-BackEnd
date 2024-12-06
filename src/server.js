@@ -4,6 +4,7 @@ import swaggerUi from 'swagger-ui-express';
 import swaggerDocument from './config/swagger-output.json' assert { type: 'json' } ;
 
 import veiculosRoutes from './routes/veiculos.routes.js';
+import usuariosRoutes from './routes/usuarios.routes.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -17,6 +18,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Rotas
 app.use('/veiculos', veiculosRoutes);
+app.use(usuariosRoutes);
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);
