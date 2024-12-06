@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Rotas
-app.use('/veiculos', veiculosRoutes);
+app.use(veiculosRoutes);
 app.use(usuariosRoutes);
 app.use(authRoutes) ;
 
