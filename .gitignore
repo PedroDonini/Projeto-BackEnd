@@ -3,3 +3,9 @@ node_modules/
 
 # Ignorar o arquivo package-lock.json
 package-lock.json
+
+# Ignorar pasta sobre o projeto
+sobre_projeto/
+
+# Ignorar o script automatizado para realizar um commit
+script_Commit.sh
