@@ -1,25 +1,25 @@
-import jwt from 'jsonwebtoken';
+const jwt = require('jsonwebtoken');
 
-const SECRET_KEY = 'secreto';
-
-// Middleware para verificar o token JWT
-const authMiddleware = (req, res, next) => {
-  const token = req.headers['authorization']?.split(' ')[1];
-
-  if (!token) {
-    return res.status(403).json({ erro: 'Token não fornecido.' });
-  }
-
-  // Verifica se o token é válido
-  jwt.verify(token, SECRET_KEY, (err, decoded) => {
-    if (err) {
-      return res.status(403).json({ erro: 'Token inválido ou expirado.' });
+module.exports = {
+  authenticate(req, res, next){
+    const token = req.headers[ 'authorization' ];
+    if(!token){
+      return res.status(401).json({ error: 'Token ausente' });
     }
 
-    // Armazena as informações do usuário decodificadas no request
-    req.user = decoded;
-    next();
-  });
-};
+    jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+      if(err){
+        return res.status(403).json({ err: 'Token invalido' });
+      }
+      req.user = user;
+      next();
+    });
+  },
 
-export default authMiddleware;
+  authorizeAdmin(req, res, next){
+    if(!req.user.isAdmin){
+      return res.status(403).json({ message: 'Acesso Negado' });
+    }
+    next();
+  }
+};
