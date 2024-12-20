@@ -36,6 +36,35 @@ router.post('/', authenticate, validateData(pieceSchema), pieceController.create
 
 /**
  * @swagger
+ * /pieces/all:
+ *   get:
+ *     summary: Listar todas as peças
+ *     tags: [Peças]
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Lista de todas as peças
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   id:
+ *                     type: integer
+ *                   brand:
+ *                     type: string
+ *                   model:
+ *                     type: string
+ *                   price:
+ *                     type: number
+ */
+router.get('/all', authenticate, pieceController.getAllPieces);
+
+/**
+ * @swagger
  * /pieces:
  *   get:
  *     summary: Listar peças com paginação

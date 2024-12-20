@@ -15,6 +15,10 @@ exports.getVehicles = (limit, page) => {
   return vehicles.slice(startIndex, endIndex);
 };
 
+exports.getAllVehicles = () => {
+  return vehicles;
+};
+
 exports.updateVehicle = (id, brand, model, price) => {
   const vehicle = vehicles.find(v => v.id == id);
   vehicle.brand = brand;

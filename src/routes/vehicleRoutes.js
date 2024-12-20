@@ -34,6 +34,37 @@ const { vehicleSchema } = require('../models/schemas');
  */
 router.post('/', authenticate, validateData(vehicleSchema), vehicleController.createVehicle);
 
+
+/**
+ * @swagger
+ * /vehicles/all:
+ *   get:
+ *     summary: Listar todos os veículos
+ *     tags: [Veículos]
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Lista de todos os veículos
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   id:
+ *                     type: integer
+ *                   brand:
+ *                     type: string
+ *                   model:
+ *                     type: string
+ *                   price:
+ *                     type: number
+ */
+router.get('/all', authenticate, vehicleController.getAllVehicles);
+
+
 /**
  * @swagger
  * /vehicles:

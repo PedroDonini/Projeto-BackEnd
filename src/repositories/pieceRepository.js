@@ -15,6 +15,10 @@ exports.getPieces = (limit, page) => {
   return pieces.slice(startIndex, endIndex);
 };
 
+exports.getAllPieces = () => {
+  return pieces;
+};
+
 exports.updatePiece = (id, brand, model, price) => {
   const piece = pieces.find(p => p.id == id);
   piece.brand = brand;

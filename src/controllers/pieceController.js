@@ -14,6 +14,11 @@ exports.getPieces = (req, res) => {
   res.send(pieces);
 };
 
+exports.getAllPieces = (req, res) => { 
+  const pieces = pieceRepository.getAllPieces(); 
+  res.send(pieces);
+};
+
 exports.updatePiece = (req, res) => {
   if (req.user.role !== 'admin') return res.status(403).send('Acesso negado');
   

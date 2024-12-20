@@ -1,11 +1,11 @@
-const vehicleRepository = require('../repositories/vehicleRepository'); // Importação correta
+const vehicleRepository = require("../repositories/vehicleRepository"); // Importação correta
 
 exports.createVehicle = (req, res) => {
-  if (req.user.role !== 'admin') return res.status(403).send('Acesso negado');
-  
+  if (req.user.role !== "admin") return res.status(403).send("Acesso negado");
+
   const { brand, model, price } = req.body;
   const newVehicle = vehicleRepository.createVehicle(brand, model, price);
-  res.send('Veiculo adicionado');
+  res.send("Veiculo adicionado");
 };
 
 exports.getVehicles = (req, res) => {
@@ -14,19 +14,29 @@ exports.getVehicles = (req, res) => {
   res.send(vehicles);
 };
 
+exports.getAllVehicles = (req, res) => {
+  const vehicles = vehicleRepository.getAllVehicles();
+  res.send(vehicles);
+};
+
 exports.updateVehicle = (req, res) => {
-  if (req.user.role !== 'admin') return res.status(403).send('Acesso negado');
-  
+  if (req.user.role !== "admin") return res.status(403).send("Acesso negado");
+
   const { id } = req.params;
   const { brand, model, price } = req.body;
-  const updatedVehicle = vehicleRepository.updateVehicle(id, brand, model, price);
-  res.send('Veiculo atualizado');
+  const updatedVehicle = vehicleRepository.updateVehicle(
+    id,
+    brand,
+    model,
+    price
+  );
+  res.send("Veiculo atualizado");
 };
 
 exports.deleteVehicle = (req, res) => {
-  if (req.user.role !== 'admin') return res.status(403).send('Acesso negado');
-  
+  if (req.user.role !== "admin") return res.status(403).send("Acesso negado");
+
   const { id } = req.params;
   vehicleRepository.deleteVehicle(id);
-  res.send('Veiculo Deletado');
+  res.send("Veiculo Deletado");
 };

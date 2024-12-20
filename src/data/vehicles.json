@@ -40,5 +40,11 @@
     "brand": "Hyundai",
     "model": "Elantra",
     "price": 19000
+  },
+  {
+    "id": 8,
+    "brand": "Toyota",
+    "model": "Corolla",
+    "price": 20000
   }
 ]
