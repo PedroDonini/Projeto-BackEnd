@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "username": "user1",
+    "password": "$2a$10$TfdJWsjvAHuGsSauFhO4teZ4g3EMJ5MhNtaO698Q0haQiVjdJxwY6",
+    "role": "user"
+  },
+  {
+    "id": 3,
+    "username": "admin",
+    "password": "$2a$10$dqWsWLLDTp7izcBxtkoj5OO0MPSL62v.h0ssko/zaF14wOEoyksES",
+    "role": "admin"
+  },
+  {
+    "id": 4,
+    "username": "luispaulo",
+    "password": "$2a$10$38cmgxUPa3gr9gOdB7ycM.r3pBGDeQ66XpNQkcgWm7mJBmAbhY1we",
+    "role": "admin"
+  },
+  {
+    "id": 4,
+    "username": "usuario1",
+    "password": "$2a$10$9b2CiShWd38GBJJMH7w5j.qizgL2DzpjNJATxK8YTUHxGzXCHn5sm",
+    "role": "user"
+  },
+  {
+    "id": 5,
+    "username": "admin2",
+    "password": "$2a$10$gLNI.JS1iG7SrVVT3g62fuq06qS1UtrP46o/A5.PFbIle0YOdZVN.",
+    "role": "admin"
+  },
+  {
+    "id": 6,
+    "username": "admin2",
+    "password": "$2a$10$fC4rYE.RpFkAoSuahN/qMepdXrSRBuK44XNW7AhdXECdVvnuSOlPa",
+    "role": "admin"
+  }
+]

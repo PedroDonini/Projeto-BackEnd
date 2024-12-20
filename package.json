@@ -1,26 +1,32 @@
 {
   "name": "projeto-backend",
   "version": "1.0.0",
-  "description": "",
-  "type": "module",
   "main": "index.js",
   "scripts": {
-    "swagger-autogen": "node src/config/swagger.js",
-    "start": "node src/server.js",
-    "dev": "nodemon src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PedroDonini/Projeto-BackEnd.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.21.1",
-    "jsonwebtoken": "^9.0.2",
-    "swagger-autogen": "^2.23.7",
-    "swagger-ui-express": "^5.0.1",
-    "uuid": "^11.0.3"
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/PedroDonini/Projeto-BackEnd/issues"
   },
-  "devDependencies": {
-    "nodemon": "^3.1.7"
+  "homepage": "https://github.com/PedroDonini/Projeto-BackEnd#readme",
+  "description": "",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "fs": "^0.0.1-security",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
   }
 }
